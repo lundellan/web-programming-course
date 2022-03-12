@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <span>Most watched actors</span>
+</mat-toolbar>
+
+<div class="block">
+  <div *ngFor="let actor of actors.keys()">
+    <strong>{{actor}}</strong>
+    {{actors.get(actor)}}
+  </div>
+</div>
+
+<mat-toolbar>
+  <span>Most watched genres</span>
+</mat-toolbar>
+
+<div class="block">
+  <div *ngFor="let genre of genres.keys()">
+    <strong>{{genre}}</strong>
+    {{actors.get(genre)}}
+  </div>
+</div>

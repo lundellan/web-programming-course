@@ -1,0 +1,61 @@
+<div class="block">
+  <div>
+    <img mat-card-lg-image class="img" src="{{movieInformationService.content.Poster}}">
+  </div>
+
+  <div>
+    <h1>{{movieInformationService.content.Title}}</h1>
+  </div>
+
+  <div>
+    {{movieInformationService.content.Plot}}
+  </div><br>
+
+  <div>
+    <div>
+      <strong>Actors: </strong>
+      {{movieInformationService.content.Actors}}
+    </div>
+
+    <div>
+      <strong>Directors: </strong>
+      {{movieInformationService.content.Director}}
+    </div>
+
+    <div>
+      <strong>Genre: </strong>
+      {{movieInformationService.content.Genre}}
+    </div>
+
+    <div>
+      <strong>Runtime: </strong>
+      {{movieInformationService.content.Runtime}}
+    </div>
+
+    <div>
+      <strong>Released: </strong>
+      {{movieInformationService.content.Released}}
+    </div>
+  </div>
+
+  <div>
+    <strong>BoxOffice: </strong>
+    {{movieInformationService.content.BoxOffice}}
+  </div><br>
+
+  <div>
+    <h3>
+      <strong>Critics</strong>
+    </h3>
+    <strong>Imdb: </strong>
+    {{movieInformationService.content.imdbRating}}
+
+    <strong>Metascore: </strong>
+    {{movieInformationService.content.Metascore}}
+  </div><br>
+</div>
+
+<div class="buttons">
+    <app-watchlist-button [movie]=movieInformationService.content></app-watchlist-button>
+    <app-viewed-movie-button [movie]=movieInformationService.content></app-viewed-movie-button>
+</div>

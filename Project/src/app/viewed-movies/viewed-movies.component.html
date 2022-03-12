@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <span>Viewed Movies</span>
+  <span class="button-right"></span>
+  <div>
+    <button mat-flat-button (click)="viewedMoviesService.clearViewedMovies()">
+      Clear
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-nav-list role="list">
+  <div role="listitem" *ngFor="let item of viewedMoviesService.items">
+      <a mat-list-item style="height: 85px" class="list-item" routerLink="/movie-information/{{item.imdbID}}" routerLinkActive="active">
+        <img class="img" mat-card-sm-image src={{item.Poster}}>
+        <h2 class="title">
+          {{item.Title}}
+        </h2>
+      </a>
+  </div>
+</mat-nav-list>

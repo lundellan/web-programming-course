@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <span>Trending movies</span>
+  <mat-icon>trending_up</mat-icon>
+</mat-toolbar>
+
+<mat-grid-list class="full-grid" cols="3" rowHeight="430px">
+  <div *ngFor="let featured of homeService.content; let i = index; ">
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title>{{featured.Title}}</mat-card-title>
+          <mat-card-subtitle>{{featured.Actors}}</mat-card-subtitle>
+          <img mat-card-lg-image src={{featured.Poster}}>
+        </mat-card-title-group>
+        <mat-card-content>{{bigPlot(featured.Plot)}}</mat-card-content>
+
+        <mat-card-actions>
+          <app-watchlist-button [movie]=featured></app-watchlist-button>
+
+          <a mat-button routerLink="/movie-information/{{featured.imdbID}}" routerLinkActive="active">
+            More ->
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>
